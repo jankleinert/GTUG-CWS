@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 
 <!--
-  Google I/O 2011 HTML slides template
-  
-  Created by Luke Mahé (lukem@google.com) 
-         and Marcin Wichary (mwichary@google.com).
--->
+  Google HTML5 slide template
 
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
 <html>
   <head>
     <title>The future of web apps</title>
     <meta charset='utf-8' />
     <script
       src='slides.js'></script>
-    <script src="http://webintents.org/webintents.js"></script>
+    <script src="http://webintents.org/webintents.min.js"></script>
   </head>
   
   <style>
@@ -52,19 +56,22 @@
 
   <body style='display: none'>
 
-    <section class='slides'>
+    <section class='slides layout-regular template-io2011'>
       
       <!-- Your slides (<article>s) go here. Delete or comment out the
            slides below. -->
       
       <article>
       <h1>
-          The future of web-apps
+          Web Intents and The Future of Web Apps
         </h1>
         <p>
         Paul Kinlan (@paul_kinlan)<br/>
         G+: plus.ly/paul.kinlan
-          </p> 
+        </p>
+        <p>
+        Jan Kleinert (@jankleinert)<br/>
+        G+: plus.ly/jan.kleinert 
       </article>
 
 
@@ -246,6 +253,7 @@ window.navigator.startActivity(intent);</pre>
 
       <article class="fill">
         <h4 class="dark">Editing</h4>
+        <img src="images/edit.png" />
       </article>
 
       <article class="fill">
@@ -263,12 +271,27 @@ window.navigator.startActivity(intent);</pre>
       <article>
         <q>This will change the way we build apps on the web - Paul Kinlan</q>
       </article>
+
+      <article>
+        <h2>How to get started?</h2>
+      </article>
+
+      <article>
+        <h3>JavaScript Shim</h3>
+        <pre>&lt;script src="http://webintents.org/webintents.min.js"&gt;&lt;/script&gt;</pre>
+        <h3>Examples</h3>
+        <p><a href="http://examples.webintents.org" target="_blank">examples.webintents.org</a></p>
+      </article>
+
+      <article>
+        <h2>What's coming next?</h2>
+      </article>
        
       <article>
         <h3>
           Thank you!
         </h3>
-        <h2>What are your use-cases?</h2>
+        <h2>What are your use cases?</h2>
       </article>
       
     </section>

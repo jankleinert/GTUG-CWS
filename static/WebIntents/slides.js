@@ -1,15 +1,16 @@
 /*
-  Google I/O 2011 HTML slides template
+  Google HTML5 slides template
 
-  Authors: Luke MahÃ© (code)
+  Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
-  URL: http://code.google.com/p/io-2011-slides/
+  URL: http://code.google.com/p/html5slides/
 */
 
-var PERMANENT_URL_PREFIX = '';
+var PERMANENT_URL_PREFIX = 'http://html5slides.googlecode.com/svn/trunk/';
 
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
@@ -555,7 +556,7 @@ function addGeneralStyle() {
   var el = document.createElement('link');
   el.rel = 'stylesheet';
   el.type = 'text/css';
-  el.href = PERMANENT_URL_PREFIX + 'styles.css';
+  el.href = /*PERMANENT_URL_PREFIX + */'styles.css';
   document.body.appendChild(el);
   
   var el = document.createElement('meta');
@@ -583,6 +584,8 @@ function makeBuildLists() {
 function handleDomLoaded() {
   slideEls = document.querySelectorAll('section.slides > article');
 
+  setupFrames();
+
   addFontStyle();
   addGeneralStyle();
   addPrettify();
@@ -591,7 +594,6 @@ function handleDomLoaded() {
   updateSlides();
 
   setupInteraction();
-  setupFrames();
   makeBuildLists();
 
   document.body.classList.add('loaded');
@@ -600,7 +602,33 @@ function handleDomLoaded() {
 function initialize() {
   getCurSlideFromHash();
 
-  document.addEventListener('DOMContentLoaded', handleDomLoaded, false);
+  if (window['_DEBUG']) {
+    PERMANENT_URL_PREFIX = '../';
+  }
+
+  if (window['_DCL']) {
+    handleDomLoaded();
+  } else {
+    document.addEventListener('DOMContentLoaded', handleDomLoaded, false);
+  }
 }
 
-initialize();
+// If ?debug exists then load the script relative instead of absolute
+if (!window['_DEBUG'] && document.location.href.indexOf('?debug') !== -1) {
+  document.addEventListener('DOMContentLoaded', function() {
+    // Avoid missing the DomContentLoaded event
+    window['_DCL'] = true
+  }, false);
+
+  window['_DEBUG'] = true;
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = '../slides.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(script, s);
+
+  // Remove this script
+  s.parentNode.removeChild(s);
+} else {
+  initialize();
+}

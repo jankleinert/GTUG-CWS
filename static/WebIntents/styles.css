@@ -1,12 +1,13 @@
 /*
-  Google I/O 2011 HTML slides template
+  Google HTML5 slides template
 
-  Authors: Luke MahÃ© (code)
+  Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
+           
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
-  URL: http://code.google.com/p/io-2011-slides/
+  URL: http://code.google.com/p/html5slides/
 */
 
 /* Framework */
@@ -95,8 +96,15 @@ body {
   padding: 40px 160px;
 }
 
-.slides > article:not(.nobackground):not(.biglogo) {
-  background: url(images/colorbar.png) 0 600px repeat-x;
+.slides.template-default > article:not(.nobackground):not(.biglogo) {
+  background: url(images/google-logo-small.png) 710px 625px no-repeat;  
+  
+  background-color: white;  
+} 
+
+.slides.template-io2011 > article:not(.nobackground):not(.biglogo) {
+  background: url(images/colorbar.png) 0 600px repeat-x/*,
+              url(images/googleio-logo.png) 640px 625px no-repeat*/;
 
   background-size: 100%, 225px;  
 
@@ -146,7 +154,12 @@ body {
 
 /* Slide styles */
 
-article.biglogo {
+.slides.template-default article.biglogo {
+  background: white url(images/google-logo.png) 50% 50% no-repeat;
+}
+
+.slides.template-io2011 article.biglogo {
+  background: white /*url(images/googleio-logo.png) 50% 50% no-repeat*/;
 
   background-size: 600px;
 }
@@ -372,6 +385,8 @@ li {
   margin-bottom: .5em;
 }
 li::before {
+  content: '·';
+
   width: .75em;
   margin-left: -.75em;
 
@@ -489,9 +504,11 @@ q {
   display: block;
   font-size: 60px;
   line-height: 72px;
+  
   margin-left: 20px;
-  margin-top: 50px;
-  margin-right: 80px;  
+  
+  margin-top: 100px;
+  margin-right: 150px;    
 }
 q::before {
   content: '“';
@@ -592,4 +609,4 @@ article.smaller q::after {
 .prettyprint .dec, 
 .prettyprint .var { /* a declaration; a variable name */
   color: rgb(127, 0, 127);
-}
+}  
