@@ -74,82 +74,26 @@
         G+: plus.ly/jan.kleinert 
       </article>
 
-      <article>      
-        <h3>
-          Web Intents
-        </h3>
-        <ul>
-          <li>
-            What's the problem?
-          </li>
-          <li>
-            What are Web Intents and how can they help?
-          </li>
-          <li>
-            Use cases
-          </li>
-          <li>
-            Demos and examples
-          </li>
-          <li>
-            How to get started
-          </li>
-          <li>
-            What's coming next?
-          </li>
-        </ul>
+      <article class="fill">
+        <h4 class="dark">
+         What's the problem?
+        </h4>
       </article>
 
       <article class="fill">
-      <h4 class="dark">
-         What's the problem?
-        </h4>
         <img src="images/problem.jpg">
       </article>
 
-      <article class="fill">
+<!--      <article class="fill">
         <img src="images/problem1.jpg">
-      </article>
+      </article> -->
       
-      <article class="fill" >
+<!--      <article class="fill" >
       <img src="images/problem2.jpg" style="min-height:0;">
-      </article>
+      </article> -->
       
       <article class="fill">
         <img src="images/problem3.jpg">
-      </article>
-
-      <article class="fill">
-        <img src="images/frustrateduser.jpg">
-      </article>
-
-      <article class="fill">
-      <img src="images/services.jpg">
-      <h4 class="dark">Imagine integrating all these services?!?!1!</h4>
-      </article>
-
-      <article class="fill">
-        <img src="images/saddeveloper.jpg">
-      </article>
-
-      <article>
-        <h2>There is a solution in the works</h2>
-      </article>
-
-      <article>
-         <h2>Web Intents</h2>
-      </article>
-
-      <article>
-        <q>Web Intents is a framework for client-side service discovery and inter-application communication</q>
-      </article>
-
-      <article>
-        <h2>It's like an Android Intent</h2>
-      </article>
-
-      <article>
-        <h2>Use cases</h2>
       </article>
 
       <article class="fill">
@@ -171,114 +115,130 @@
         <h4 class="dark">Authentication</h4>
         <img src="images/openid.png" />
       </article>
-      
+
       <article class="fill">
-        <h4 class="dark">Behind the Firewall</h4>
-        <img src="images/firewall.jpg" />
-        <div class="source" style="color: white;">http://www.flickr.com/photos/dhabben/2779511984/</div>
+      <img src="images/services.jpg">
+      <h4 class="dark">Imagine integrating all these services!</h4>
       </article>
 
-      <article>
-        <h2>Why can't we just use Web Messaging or registerProtocolHandler?</h2>
-      </article>
-
-
-      <article>
-        <h2>Let's look at it</h2>
-      </article>
-  
-      <article>
-        <pre>var intent = new Intent("http://webintents.org/share", 
-                        "text/uri-list", 
-                        window.location.href);
-window.navigator.startActivity(intent);</pre>
-      <h2>Client App: I need this service</h2>
-      <button id="share">Share</button>
-      </article>
-<script>
- var share = document.getElementById("share");
- share.addEventListener("click", function() {
-   var intent = new Intent("http://webintents.org/share", 
-     "text/uri-list",
-     window.location.href);
-   window.navigator.startActivity(intent); 
- });
-</script>
-      
-      <article>
-      <h3>Action</h3>
-      <p>A verb.</p>
-      <p>Provide a common default set</p>
-      <ul>
-        <li><a href="http://webintents.org/share" target="_blank">http://webintents.org/share</a></li>
-        <li><a href="http://webintents.org/edit" target="_blank">http://webintents.org/edit</a></li>
-        <li><a href="http://webintents.org/view" target="_blank">http://webintents.org/view</a></li>
-        <li><a href="http://webintents.org/pick" target="_blank">http://webintents.org/pick</a></li>
-        <li>+ many more</li>
-      </ul>
-      </article>
-
-      <article>
-        <h3>Type</h3>
-        <p>A description of the data being used</p>
-        <ul>
-          <li>Mime-types</li>
-          <li>Activity Streams</li>
-        </ul>
-      </article>
-      
-      <article>
-        <pre>&lt;intent
-   action="http://webintents.org/share"
-   type="image/*"
-   href="shareimage.html" &gt;</pre>
-        <p>When launched, data on:</p>
-        <pre>window.intent</pre>
-        <h2>Service: I can provide this service</h2>
-        </article>
-
-      <article>
-      <h3>And then what?</h3>
-      <div class="build">
-        <h2>Nothing - you have just integrated your apps and services</h2>
-      </div>
-      </article>
-     
       <article class="fill">
-      <h4 class="dark">Let's go deeper</h4>
-      <img src="images/inception.png">
-      </article> 
- 
+        <img src="images/frustrateduser.jpg">
+      </article>
+
       <article>
-        <h3>We can do two-way communication</h3>
-        <p>Client: </p><pre>var intent = new Intent("http://webintents.org/pick", "image/*");
+        <h2>There is a solution in the works</h2>
+        <div class="build">
+          <h1>Web Intents</h1>
+        </div>  
+      </article>
+
+      <article>
+        <q>Web Intents is a framework for client-side service discovery and inter-application communication</q>
+      </article>
+
+    <article>
+      <h3>How does it work?</h3>
+      <ol class="build">
+        <li>Service registers its intention to handle an action for the user</li>
+        <li>App requests to start an action (share, edit, pick, ...)</li>
+        <li>User selects which service to handle the action</li>
+      </ol>
+    </article>
+
+ <!--     <article>
+        <h2>It's like an Android Intent</h2>
+      </article> -->
+    <article id="android-intents-slide">
+      <h3>Sound familiar?</h3>
+      <style>
+      #android-intents-slide img {
+        height: 75%;
+        border: 1px solid black;
+        margin: 0 auto;
+        display: block;
+      }
+      </style>
+      <p class="center">
+        <img src="images/android_intents.jpg">
+      </p>
+    </article>
+
+	  <article>
+	    <h3>1. Service provider's application registers itself</h3>
+	        <p>Declare intention to handle image sharing:</p>
+	        <pre class="centered">
+&lt;intent action="<b>http://webintents.org/share</b>" <b>type="image/*"</b> /&gt;</pre>
+	    <dl>
+	      <dt>action</dt>
+	      <dd>Required. A verb describing the action to be performed</dd> 
+	      <dt>type</dt>
+	      <dd><em>Optional</em>. Mimetype filters</dd>
+	      <dt>href</dt>
+	      <dd><em>Optional</em>. If specified it will point to the action that is loaded 
+	      when the user chooses the service.  If undefined, use the current page.</dd> 
+	    </dl>
+	  </article>
+
+	  <article>
+	    <h3>2. Client app starts an action</h3>
+	    <p>App says it wants to use someone's sharing functionality:</p>
+	    <pre>
+var intent = new Intent();
+intent.action = 'http://webintents.org/share';
+intent.type = 'image/*';
+intent.data = [imgData];
+
+<b>window.navigator.startActivity(intent);</b></pre>
+	    <p>( 2b. user selects which awesome service to use )</p>
+	  </article>
+
+	  <article>
+	    <h3>3. Provider handles the action</h3>
+	    <p>Passed data ( optional ) is set on page load:</p>
+	    <pre>
+window.intent.data</pre>
+	    <div class="build">
+	      <p>Then what?</p>
+	      <p><b>Nothing!</b> You have just integrated your apps and services.</p>
+	      <p style="margin-top:2em;">...but there's more!</p>
+	    </div>
+	  </article>
+
+   <article class="fill">
+   	<h4 class="dark">Let's go deeper</h4>
+   	<img src="images/inception.png">
+   </article> 
+
+   <article>
+     <h3>We can do two-way communication</h3>
+     <p>Client: </p><pre>var intent = new Intent("http://webintents.org/pick", "image/*");
 window.navigator.startActivity(intent, <b>function(intentData) {
-  // Do something with the response
+// Do something with the response
 }</b>);</pre>
-        <p>Service: </p>
-        <pre>window.intent.postResponse({  ... some data ...  });</pre>
-      </article>
+     <p>Service: </p>
+     <pre>window.intent.postResponse({  ... some data ...  });</pre>
+   </article>
 
-      <article>
-        <h3>Demo - cloud file picker</h3>
-        <pre>var intent = new Intent("http://webintents.org/pick", "image/*");
+   <article>
+     <h3>Demo - cloud file picker</h3>
+     <pre>var intent = new Intent("http://webintents.org/pick", "image/*");
+window.navigator.startActivity(intent, function(intentData) {
+var pickedImage = document.getElementById("picked");
+pickedImage.src = intentData.data;
+});</pre>
+     <button id="pick">Pick an Image</button> 
+     <img id="picked" />
+    </article>
+<script>
+var pick = document.getElementById("pick");
+pick.addEventListener("click", function() {
+var intent = new Intent("http://webintents.org/pick", 
+                        "image/*");
 window.navigator.startActivity(intent, function(intentData) {
   var pickedImage = document.getElementById("picked");
   pickedImage.src = intentData.data;
-});</pre>
-        <button id="pick">Pick an Image</button> 
-        <img id="picked" />
-       </article>
-<script>
- var pick = document.getElementById("pick");
- pick.addEventListener("click", function() {
-   var intent = new Intent("http://webintents.org/pick", 
-                           "image/*");
-   window.navigator.startActivity(intent, function(intentData) {
-     var pickedImage = document.getElementById("picked");
-     pickedImage.src = intentData.data;
-   });
- });
+});
+});
 
 </script>
 <article>
@@ -286,39 +246,52 @@ window.navigator.startActivity(intent, function(intentData) {
 <p>* - next version of the shim</p>
 <p>Client: </p><pre>var channel = MessageChannel();
 var intent = new Intent("http://webintents.org/pick", 
-    "image/*",
-    <b>channel.port1</b>);
+ "image/*",
+ <b>channel.port1</b>);
 window.navigator.startActivity(intent);</pre>
-        <p>Service: </p>
-        <pre>window.intent.postResponse({  ... some data ...  });</pre>
-      </article>
+     <p>Service: </p>
+     <pre>window.intent.postResponse({  ... some data ...  });</pre>
+   </article>
 
-      <article>
-        <q>This will change the way we build apps on the web - Paul Kinlan</q>
-      </article>
+	<article>
+		<h2>Demo</h2>
+		<a href="http://demos.webintents.org/memegen" target="_blank">PAUL CLICK THIS!!</a>
+	</article>
+	
+	<article class="fill">
+      <h4 class="dark">Behind the firewall</h4>
+	  <img src="images/firewall.jpg" />
+	  <div class="source" style="color: white;">http://www.flickr.com/photos/dhabben/2779511984/</div>
+  	</article>
 
-      <article>
-        <h2>How to get started?</h2>
-      </article>
+   <article>
+     <q>This will change the way we build apps on the web - Paul Kinlan</q>
+   </article>
 
-      <article>
-        <h3>JavaScript Shim</h3>
-        <pre>&lt;script src="http://webintents.org/webintents.min.js"&gt;&lt;/script&gt;</pre>
-        <h3>Examples</h3>
-        <p><a href="http://examples.webintents.org" target="_blank">examples.webintents.org</a></p>
-      </article>
+   <article>
+     <h2>How to get started?</h2>
+   </article>
 
-      <article>
-        <h2>What's coming next?</h2>
-      </article>
-       
-      <article>
-        <h3>
-          Thank you!
-        </h3>
-        <h2>What are your use cases?</h2>
-      </article>
-      
+   <article>
+     <h3>JavaScript Shim</h3>
+     <pre>&lt;script src="http://webintents.org/webintents.min.js"&gt;&lt;/script&gt;</pre>
+     <h3>Examples</h3>
+     <a href="http://examples.webintents.org" target="_blank">examples.webintents.org</a><br/><br/>
+     <h3>Contribute!</h3>
+	 <a href="http://webintents.org/#contributing">webintents.org/#contributing</a>
+   </article>
+
+   <article>
+     <h2>What's coming next?</h2>
+   </article>
+
+   <article>
+     <h3>
+       Thank you!
+     </h3>
+     <h2>What are your use cases?</h2>
+   </article>
+
     </section>
   </body>
 </html>
